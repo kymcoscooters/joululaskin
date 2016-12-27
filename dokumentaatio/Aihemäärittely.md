@@ -2,8 +2,8 @@
 
 **Tominnot:** 
 
--Yhteenlasku
--Vähennyslasku
--Kertolasku
--Jakolasku
--Muita "vaikeampia" ajan myötä
+*Yhteenlasku
+*Vähennyslasku
+*Kertolasku
+*Jakolasku
+*Muita "vaikeampia" ajan myötä

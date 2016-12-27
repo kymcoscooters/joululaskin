@@ -7,3 +7,7 @@
 * Kertolasku
 * Jakolasku
 * Muita "vaikeampia" ajan myötä
+
+Luokkakaavio
+
+![luokkakaavio](https://yuml.me/2d62380e "kymcolaskin")

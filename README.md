@@ -4,5 +4,6 @@ Tavoitteena olisi graafinen laskin jossa numeronäppäimet, komentonäppäimet s
 
 ###Dokumentaatio
 
-[aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
-[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+[aiheen kuvaus](https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/Aihem%C3%A4%C3%A4rittely.md)
+
+[tuntikirjanpito](https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/tuntikirjanpito.md)

@@ -3,7 +3,11 @@
 **Tominnot:** 
 
 *Yhteenlasku
+
 *Vähennyslasku
+
 *Kertolasku
+
 *Jakolasku
+
 *Muita "vaikeampia" ajan myötä

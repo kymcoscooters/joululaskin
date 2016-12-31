@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import kymcoscooterslaskin.laskinlogiikka.Laskin;
 
-public class Klikkaustenkuuntelija implements ActionListener{
+public class Klikkaustenkuuntelija implements ActionListener {
     private Laskin laskin;
     private JLabel naytto;
     private JButton ykkonen;

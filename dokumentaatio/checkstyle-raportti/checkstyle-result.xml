@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/holmbrob/Kymcolaskin/Laskin/src/main/java/kymcoscooterslaskin/kayttoliittyma/Kayttoliittyma.java">
+</file>
+<file name="/home/holmbrob/Kymcolaskin/Laskin/src/main/java/kymcoscooterslaskin/kayttoliittyma/Main.java">
+</file>
+<file name="/home/holmbrob/Kymcolaskin/Laskin/src/main/java/kymcoscooterslaskin/kayttoliittyma/Klikkaustenkuuntelija.java">
+</file>
+<file name="/home/holmbrob/Kymcolaskin/Laskin/src/main/java/kymcoscooterslaskin/laskinlogiikka/LaskinLogiikka.java">
+</file>
+<file name="/home/holmbrob/Kymcolaskin/Laskin/src/main/java/kymcoscooterslaskin/laskinlogiikka/Laskin.java">
+</file>
+</checkstyle>

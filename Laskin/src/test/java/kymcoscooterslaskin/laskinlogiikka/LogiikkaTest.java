@@ -40,15 +40,21 @@ public class LogiikkaTest {
     @Test
     public void jakoTomiiKokonasisLuvulla() {
         laskin.plus(4);
-        laskin.jako(2);
+        assertTrue(laskin.jako(2));
         assertEquals(2, laskin.getArvo(), 0.0001);
     }
     
     @Test
     public void jakoTomiiDesimaaliLuvulla() {
         laskin.plus(5);
-        laskin.jako(2);
+        assertTrue(laskin.jako(2));
         assertEquals(2.5, laskin.getArvo(), 0.0001);
+    }
+    
+    @Test
+    public void jakoNollallaPalauttaaFalse() {
+        laskin.plus(5);
+        assertFalse(laskin.jako(0));
     }
     
     @Test
@@ -65,5 +71,24 @@ public class LogiikkaTest {
         laskin.kertaa(2);
         laskin.jako(4);
         assertEquals(1, laskin.getArvo(), 0.0001);
+    }
+    
+    @Test
+    public void mplustoimii() {
+        laskin.mplus(3);
+        assertEquals(3, laskin.memory(), 0.0001);
+    }
+    
+    @Test
+    public void mmiinustoimii() {
+        laskin.mplus(3);
+        laskin.mmiinus();
+        assertEquals(0, laskin.memory(), 0.0001);
+    }
+    
+    @Test
+    public void yhtakuinPalauttaaArvon() {
+        laskin.plus(3);
+        assertEquals(3, laskin.yhtakuin(), 0.0001);
     }
 }

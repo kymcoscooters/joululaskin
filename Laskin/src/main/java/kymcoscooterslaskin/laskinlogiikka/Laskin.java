@@ -10,4 +10,5 @@ public interface Laskin {
     double memory();
     void nollaa();
     double yhtakuin();
+    double getArvo();
 }

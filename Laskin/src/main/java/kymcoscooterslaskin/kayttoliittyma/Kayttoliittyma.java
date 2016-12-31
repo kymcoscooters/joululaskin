@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import kymcoscooterslaskin.laskinlogiikka.Laskin;
 
-public class Kayttoliittyma implements Runnable{
+public class Kayttoliittyma implements Runnable {
     
     private JFrame frame;
     private Laskin laskin;

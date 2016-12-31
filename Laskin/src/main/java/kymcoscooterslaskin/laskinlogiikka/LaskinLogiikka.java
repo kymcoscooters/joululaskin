@@ -1,6 +1,6 @@
 package kymcoscooterslaskin.laskinlogiikka;
 
-public class LaskinLogiikka implements Laskin{
+public class LaskinLogiikka implements Laskin {
     private double arvo;
     private double memory;
 
@@ -57,6 +57,11 @@ public class LaskinLogiikka implements Laskin{
 
     @Override
     public double yhtakuin() {
+        return arvo;
+    }
+
+    @Override
+    public double getArvo() {
         return arvo;
     }
     

@@ -10,4 +10,4 @@ Tavoitteena olisi graafinen laskin jossa numeronäppäimet, komentonäppäimet s
 
 [pit-raportti](https://htmlpreview.github.io/?https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/pit-raportti/201612311311/index.html)
 
-[checksyle-raportti]
+[checksyle-raportti](https://htmlpreview.github.io/?https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)

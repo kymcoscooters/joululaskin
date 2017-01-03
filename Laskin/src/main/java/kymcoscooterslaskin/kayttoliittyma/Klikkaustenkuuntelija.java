@@ -5,8 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import kymcoscooterslaskin.laskinlogiikka.Laskin;
+import kymcoscooterslaskin.laskinlogiikka.Operaatio;
 
 public class Klikkaustenkuuntelija implements ActionListener {
     private Laskin laskin;
@@ -66,6 +66,28 @@ public class Klikkaustenkuuntelija implements ActionListener {
                 e.getSource() == kasi || e.getSource() == ysi || e.getSource() == nolla) {
             numerot(e);
         }
+        if (e.getSource() == plus || e.getSource() == miinus ||
+                e.getSource() == kertaus || e.getSource() == jako) {
+            operaatio(e);
+        }
+        if (e.getSource() == pilkku) {
+            pilkku();
+        }
+        if (e.getSource() == m) {
+            memory();
+        }
+        if (e.getSource() == mplus) {
+            mplus();
+        }
+        if (e.getSource() == mmiinus) {
+            mmiinus();
+        }
+        if (e.getSource() == c) {
+            nollaa();
+        }
+        if (e.getSource() == yhtakuin) {
+            yhtakuin();
+        }
     }
     
     private void numerot(ActionEvent e) {
@@ -97,4 +119,78 @@ public class Klikkaustenkuuntelija implements ActionListener {
         naytto.setText(sb.toString());
     }
     
+    private void pilkku() {
+        if (!naytto.getText().contains(".")) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(naytto.getText());
+            sb.append(".");
+            naytto.setText(sb.toString());
+        }
+    }
+    
+    private void memory() {
+        if (laskin.memory() != 0) {
+            naytto.setText(Double.toString(laskin.memory()));
+        }
+    }
+    
+    private void mplus() {
+        if (laskin.memory() == 0) {
+            laskin.mplus(Double.parseDouble(naytto.getText()));
+            naytto.setText("");
+        }
+    }
+    
+    private void mmiinus() {
+        laskin.mmiinus();
+    }
+    
+    private void nollaa() {
+        laskin.nollaa();
+        naytto.setText("");
+    }
+    
+    private void operaatio(ActionEvent e) {
+        laskin.plus(Double.parseDouble(naytto.getText()));
+        naytto.setText("");
+        if (e.getSource() == plus) {
+            laskin.setOperaatio(Operaatio.PLUS);
+        }
+        if (e.getSource() == miinus) {
+            laskin.setOperaatio(Operaatio.MIINUS);
+        }
+        if (e.getSource() == kertaus) {
+            laskin.setOperaatio(Operaatio.KERTAUS);
+        }
+        if (e.getSource() == jako) {
+            laskin.setOperaatio(Operaatio.JAKO);
+        }
+    }
+    
+    private void yhtakuin() {
+        double arvo = Double.parseDouble(naytto.getText());
+        boolean totuus = true;
+        if (laskin.getOperaatio() == (Operaatio.PLUS)) {
+            laskin.plus(arvo);
+        }
+        if (laskin.getOperaatio() == Operaatio.MIINUS) {
+            laskin.miinus(arvo);
+        }
+        if (laskin.getOperaatio() == Operaatio.KERTAUS) {
+            laskin.kertaa(arvo);
+        }
+        if (laskin.getOperaatio() == Operaatio.JAKO) {
+            if (!laskin.jako(arvo)) {
+                totuus = false;
+            }
+        }
+        if (laskin.getOperaatio() == null) {
+            return;
+        }
+        if (totuus) {
+            naytto.setText(Double.toString(laskin.getArvo()));
+        } else {
+            naytto.setText("ERROR");
+        }
+    }
 }

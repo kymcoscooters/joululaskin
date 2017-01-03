@@ -2,6 +2,7 @@ package kymcoscooterslaskin.kayttoliittyma;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -26,6 +27,7 @@ public class Kayttoliittyma implements Runnable {
         frame = new JFrame("KYMCOLASKIN");
         frame.setPreferredSize(new Dimension(300, 600));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         
         luoKomponentit(frame.getContentPane());
         
@@ -37,7 +39,7 @@ public class Kayttoliittyma implements Runnable {
         container.setLayout(new GridLayout(6, 1));
         
         JLabel naytto = new JLabel("");
-        naytto.setEnabled(false);
+        naytto.setFont(new Font("Serif", Font.PLAIN, 40));
         container.add(naytto);
         
         JButton m = new JButton("M");

@@ -11,4 +11,6 @@ public interface Laskin {
     void nollaa();
     double yhtakuin();
     double getArvo();
+    void setOperaatio(Operaatio o);
+    Operaatio getOperaatio();
 }

@@ -3,6 +3,7 @@ package kymcoscooterslaskin.laskinlogiikka;
 public class LaskinLogiikka implements Laskin {
     private double arvo;
     private double memory;
+    private Operaatio operaatio;
 
     public LaskinLogiikka() {
         arvo = 0;
@@ -65,6 +66,12 @@ public class LaskinLogiikka implements Laskin {
         return arvo;
     }
     
-    
+    public void setOperaatio(Operaatio o) {
+        operaatio = o;
+    }
+
+    public Operaatio getOperaatio() {
+        return operaatio;
+    }
     
 }

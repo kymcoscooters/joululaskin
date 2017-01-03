@@ -6,8 +6,8 @@
 * Vähennyslasku
 * Kertolasku
 * Jakolasku
-* Muita "vaikeampia" ajan myötä
+* Memory-näppäimet
 
 Luokkakaavio
 
-![luokkakaavio](https://yuml.me/2d62380e "kymcolaskin")
+![luokkakaavio](https://yuml.me/d04fc44e "kymcolaskin")

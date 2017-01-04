@@ -9,7 +9,6 @@ public interface Laskin {
     void mmiinus();
     double memory();
     void nollaa();
-    double yhtakuin();
     double getArvo();
     void setOperaatio(Operaatio o);
     Operaatio getOperaatio();

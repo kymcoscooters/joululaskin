@@ -12,6 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import kymcoscooterslaskin.laskinlogiikka.Laskin;
 
+/**
+ * Käyttöliittymä piirtää laskimen ja tarjoaa näppäimet ja näytön
+ * käyttäjää varten, napinpainallukset lähetetään eteenpäin
+ * klikkaustenkuuntelijalle.
+ * 
+ * @author holmbrob
+ */
 public class Kayttoliittyma implements Runnable {
     
     private JFrame frame;

@@ -86,9 +86,4 @@ public class LogiikkaTest {
         assertEquals(0, laskin.memory(), 0.0001);
     }
     
-    @Test
-    public void yhtakuinPalauttaaArvon() {
-        laskin.plus(3);
-        assertEquals(3, laskin.yhtakuin(), 0.0001);
-    }
 }

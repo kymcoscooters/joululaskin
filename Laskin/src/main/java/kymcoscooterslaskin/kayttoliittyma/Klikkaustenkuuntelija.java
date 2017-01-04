@@ -8,6 +8,11 @@ import javax.swing.JLabel;
 import kymcoscooterslaskin.laskinlogiikka.Laskin;
 import kymcoscooterslaskin.laskinlogiikka.Operaatio;
 
+/**
+ * Klikkaustenkuuntelija hoitaa käyttöliittymältä tulleet näppäinpainallukset.
+ * 
+ * @author holmbrob
+ */
 public class Klikkaustenkuuntelija implements ActionListener {
     private Laskin laskin;
     private JLabel naytto;
@@ -122,8 +127,7 @@ public class Klikkaustenkuuntelija implements ActionListener {
     private void pilkku() {
         if (!naytto.getText().contains(".")) {
             StringBuilder sb = new StringBuilder();
-            sb.append(naytto.getText());
-            sb.append(".");
+            sb.append(naytto.getText() + ".");
             naytto.setText(sb.toString());
         }
     }

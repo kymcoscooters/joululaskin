@@ -86,4 +86,9 @@ public class LogiikkaTest {
         assertEquals(0, laskin.memory(), 0.0001);
     }
     
+    @Test
+    public void operaationlisaystoimii() {
+        laskin.setOperaatio(Operaatio.JAKO);
+        assertEquals(Operaatio.JAKO, laskin.getOperaatio());
+    }
 }

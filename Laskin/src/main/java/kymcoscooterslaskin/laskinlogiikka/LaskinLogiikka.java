@@ -9,7 +9,10 @@ public class LaskinLogiikka implements Laskin {
     private double arvo;
     private double memory;
     private Operaatio operaatio;
-
+    
+    /**
+     * Konstruktori alustaa oliomuuttujat arvo ja memory.
+     */
     public LaskinLogiikka() {
         arvo = 0;
         memory = 0;

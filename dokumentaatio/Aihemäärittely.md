@@ -11,3 +11,7 @@
 Luokkakaavio
 
 ![luokkakaavio](https://yuml.me/d04fc44e "kymcolaskin")
+
+![Sekvenssikaavio](./lukujen plussaaminen.png "lukujen plussaaminen")
+
+![Sekvenssikaavio](./nollalla jakaminen.png "nollalla jakaminen")

@@ -8,3 +8,5 @@ Päivä | Tunnit | Kuvaus
 31.12.2016 | 1h | checkstyle-raportti tehty, pit-raportti päivitetty, testejä lisätty
 03.01.2017 | 2h | Näppäinfunktiot lisätty laskimelle, luokkakaavio päivitetty
 04.01.2017 | 2h | JavaDocia lisätty, checkstyle ja pit-raportit päivitetty
+08.01.2017 | 2h | Sekvenssikaavioita piirretty, checkstyle ja pit-raportit päivitetty
+

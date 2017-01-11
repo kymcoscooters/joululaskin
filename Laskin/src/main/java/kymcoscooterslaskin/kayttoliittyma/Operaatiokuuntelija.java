@@ -9,10 +9,10 @@ import kymcoscooterslaskin.laskinlogiikka.Laskin;
 import kymcoscooterslaskin.laskinlogiikka.Operaatio;
 
 /**
- *
+ * Operaatiokuuntelija hoitaa operaationäppäimiin liittyvät toiminnot ja kaikki laskut.
  * @author holmbrob
  */
-public class Operaatiokuuntelija implements ActionListener{
+public class Operaatiokuuntelija implements ActionListener {
     private final JLabel naytto;
     private final JButton m;
     private final JButton mplus;
@@ -25,6 +25,12 @@ public class Operaatiokuuntelija implements ActionListener{
     private final JButton yhtakuin;
     private final Laskin laskin;
     
+    /**
+     * Konstruktori alustaa laskimen, näytön ja kaikki napit.
+     * @param laskin Laskin-rajapintaa toteuttava olio
+     * @param naytto JLabel näyttö johon kirjoitetaan vastaukset
+     * @param napit lista JButton-napeista
+     */
     public Operaatiokuuntelija(Laskin laskin, JLabel naytto, List<JButton> napit) {
         this.laskin = laskin;
         this.naytto = naytto;
@@ -40,7 +46,7 @@ public class Operaatiokuuntelija implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch(e.getActionCommand()) {
+        switch (e.getActionCommand()) {
             case "M" :
                 memory();
                 break;
@@ -136,7 +142,18 @@ public class Operaatiokuuntelija implements ActionListener{
                 return;
             }
             if (totuus) {
-                naytto.setText(Double.toString(laskin.getArvo()));
+                String vastaus = Double.toString(laskin.getArvo());
+                if (vastaus.length() > 12) {
+                    if (vastaus.contains("E")) {
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(vastaus.substring(0, 8));
+                        sb.append(vastaus.substring(vastaus.length() - 3, vastaus.length()));
+                        vastaus = sb.toString();
+                    } else {
+                        vastaus = vastaus.substring(0, 11);
+                    }
+                }
+                naytto.setText(vastaus);
             } else {
                 naytto.setText("ERROR");
             }

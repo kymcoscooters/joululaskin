@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -33,13 +34,15 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("KYMCOLASKIN");
-        frame.setPreferredSize(new Dimension(300, 600));
+//        frame.setPreferredSize(new Dimension(300, 600));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+//        frame.setResizable(false);
         
         luoKomponentit(frame.getContentPane());
         
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.pack();
+        frame.setSize(screenSize.width/4, screenSize.height/2);
         frame.setVisible(true);
     }
     

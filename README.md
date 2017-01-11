@@ -8,6 +8,6 @@ Tavoitteena olisi graafinen laskin jossa numeronäppäimet, komentonäppäimet s
 
 [tuntikirjanpito](https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[pit-raportti](https://htmlpreview.github.io/?https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/pit-raportti/201701082302/index.html)
+[pit-raportti](https://htmlpreview.github.io/?https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/pit-raportti/201701112139/index.html)
 
 [checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/kymcoscooters/joululaskin/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)

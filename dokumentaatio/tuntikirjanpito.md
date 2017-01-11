@@ -10,3 +10,4 @@ Päivä | Tunnit | Kuvaus
 04.01.2017 | 2h | JavaDocia lisätty, checkstyle ja pit-raportit päivitetty
 08.01.2017 | 2h | Sekvenssikaavioita piirretty, checkstyle ja pit-raportit päivitetty
 10.01.2017 | 1h | Koodia refaktoroitu, pieniä bugeja korjattu
+11.01.2017 | 3h | Bugeja korjattu, checkstyle ja pit-raportit päivitetty, ajettava jar luotu, luokkakaaviota korjattu

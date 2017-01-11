@@ -7,10 +7,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- *
+ *Numerokuuntelija hoitaa numeronäppäimiin sekä pilkku-näppäimeen liittyvät toimenpiteet. 
  * @author holmbrob
  */
-public class Numerokuuntelija implements ActionListener{
+public class Numerokuuntelija implements ActionListener {
     private final JLabel naytto;
     private final JButton ykkonen;
     private final JButton kakkonen;
@@ -24,6 +24,12 @@ public class Numerokuuntelija implements ActionListener{
     private final JButton nolla;
     private final JButton pilkku;
     
+    /**
+     * Konstruktori alustaa JLabel näytön ja kaikki JButton napit.
+     * 
+     * @param naytto laskimen näyttö josta otetaan tekstiä ja lisätään tekstiä
+     * @param napit lista kaikista numeronäppäimistä sekä pilkku-näppäimestä
+     */
     public Numerokuuntelija(JLabel naytto, List<JButton> napit) {
         this.naytto = naytto;
         ykkonen = napit.get(0);
@@ -38,6 +44,7 @@ public class Numerokuuntelija implements ActionListener{
         nolla = napit.get(9);
         pilkku = napit.get(10);
     }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
@@ -78,16 +85,18 @@ public class Numerokuuntelija implements ActionListener{
     }
     
     private void lisaaNumero(int i) {
-        StringBuilder sb = new StringBuilder();
+        if (naytto.getText().length() < 12) {
+            StringBuilder sb = new StringBuilder();
             if (!naytto.getText().equals("")) {
                 sb.append(naytto.getText());
             }
-        sb.append(Integer.toString(i));
-        naytto.setText(sb.toString());
+            sb.append(Integer.toString(i));
+            naytto.setText(sb.toString());
+        }
     }
     
     private void lisaaNolla() {
-        if (!naytto.getText().equals("0")) {
+        if (!naytto.getText().equals("0") && naytto.getText().length() < 12) {
             StringBuilder sb = new StringBuilder();
             sb.append(naytto.getText());
             sb.append("0");
@@ -96,7 +105,7 @@ public class Numerokuuntelija implements ActionListener{
     }
     
     private void lisaaPilkku() {
-        if (!naytto.getText().contains(".")) {
+        if (!naytto.getText().contains(".") && naytto.getText().length() < 12) {
             StringBuilder sb = new StringBuilder();
             sb.append(naytto.getText());
             sb.append(".");

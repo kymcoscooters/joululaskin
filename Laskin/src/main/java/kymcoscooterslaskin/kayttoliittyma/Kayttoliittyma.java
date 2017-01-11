@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -49,63 +50,25 @@ public class Kayttoliittyma implements Runnable {
         naytto.setFont(new Font("Serif", Font.PLAIN, 40));
         container.add(naytto);
         
-        JButton m = new JButton("M");
-        JButton mplus = new JButton("M+");
-        JButton mmiinus = new JButton("M-");
-        JButton c = new JButton("C");
-        container.add(luopaneeli(m, mplus, mmiinus, c));
+        List<JButton> numer = luoNumeroNapit();
+        List<JButton> oper = luoOperaatioNapit();
         
-        JButton ykkonen = new JButton("1");
-        JButton kakkonen = new JButton("2");
-        JButton kolmonen = new JButton("3");
-        JButton plus = new JButton("+");
-        container.add(luopaneeli(ykkonen, kakkonen, kolmonen, plus));
+        container.add(luopaneeli(oper.get(0), oper.get(1), oper.get(2), oper.get(3)));
+        container.add(luopaneeli(numer.get(0), numer.get(1), numer.get(2), oper.get(4)));
+        container.add(luopaneeli(numer.get(3), numer.get(4), numer.get(5), oper.get(5)));
+        container.add(luopaneeli(numer.get(6), numer.get(7), numer.get(8), oper.get(6)));
+        container.add(luopaneeli(numer.get(10), numer.get(9), oper.get(8), oper.get(7)));
         
-        JButton nelonen = new JButton("4");
-        JButton vitonen = new JButton("5");
-        JButton kutonen = new JButton("6");
-        JButton miinus = new JButton("-");
-        container.add(luopaneeli(nelonen, vitonen, kutonen, miinus));
+        Numerokuuntelija nk = new Numerokuuntelija(naytto, numer);
+        Operaatiokuuntelija ok = new Operaatiokuuntelija(laskin, naytto, oper);
         
-        JButton seiska = new JButton("7");
-        JButton kasi = new JButton("8");
-        JButton ysi = new JButton("9");
-        JButton kertaus = new JButton("*");
-        container.add(luopaneeli(seiska, kasi, ysi, kertaus));
-        
-        JButton pilkku = new JButton(",");
-        JButton nolla = new JButton("0");
-        JButton yhtakuin = new JButton("=");
-        JButton jako = new JButton("/");
-        container.add(luopaneeli(pilkku, nolla, yhtakuin, jako));
-        
-        ArrayList<JButton> napit = new ArrayList<>();
-        napit.add(ykkonen);
-        napit.add(kakkonen);
-        napit.add(kolmonen);
-        napit.add(nelonen);
-        napit.add(vitonen);
-        napit.add(kutonen);
-        napit.add(seiska);
-        napit.add(kasi);
-        napit.add(ysi);
-        napit.add(nolla);
-        napit.add(m);
-        napit.add(mplus);
-        napit.add(mmiinus);
-        napit.add(c);
-        napit.add(pilkku);
-        napit.add(yhtakuin);
-        napit.add(plus);
-        napit.add(miinus);
-        napit.add(kertaus);
-        napit.add(jako);
-        
-        Klikkaustenkuuntelija k = new Klikkaustenkuuntelija(laskin, naytto, napit);
-        
-        for (JButton nappi : napit) {
-            nappi.addActionListener(k);
+        for (JButton jb : numer) {
+            jb.addActionListener(nk);
         }
+        for (JButton jb : oper) {
+            jb.addActionListener(ok);
+        }
+        
     }
     
     private JPanel luopaneeli(JButton eka, JButton toka, JButton kolmas, JButton neljas) {
@@ -115,6 +78,36 @@ public class Kayttoliittyma implements Runnable {
         panel.add(kolmas);
         panel.add(neljas);
         return panel;
+    }
+    
+    private List<JButton> luoNumeroNapit() {
+        List<JButton> lista = new ArrayList<>();
+        lista.add(new JButton("1"));
+        lista.add(new JButton("2"));
+        lista.add(new JButton("3"));
+        lista.add(new JButton("4"));
+        lista.add(new JButton("5"));
+        lista.add(new JButton("6"));
+        lista.add(new JButton("7"));
+        lista.add(new JButton("8"));
+        lista.add(new JButton("9"));
+        lista.add(new JButton("0"));
+        lista.add(new JButton(","));
+        return lista;
+    }
+    
+    private List<JButton> luoOperaatioNapit() {
+        List<JButton> lista = new ArrayList<>();
+        lista.add(new JButton("M"));
+        lista.add(new JButton("M+"));
+        lista.add(new JButton("M-"));
+        lista.add(new JButton("C"));
+        lista.add(new JButton("+"));
+        lista.add(new JButton("-"));
+        lista.add(new JButton("*"));
+        lista.add(new JButton("/"));
+        lista.add(new JButton("="));
+        return lista;
     }
     
 }

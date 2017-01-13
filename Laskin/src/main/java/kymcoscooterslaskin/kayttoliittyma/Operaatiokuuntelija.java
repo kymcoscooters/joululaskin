@@ -9,10 +9,13 @@ import kymcoscooterslaskin.laskinlogiikka.Laskin;
 import kymcoscooterslaskin.laskinlogiikka.Operaatio;
 
 /**
- * Operaatiokuuntelija hoitaa operaationäppäimiin liittyvät toiminnot ja kaikki laskut.
+ * Operaatiokuuntelija hoitaa operaationäppäimiin liittyvät toiminnot ja kaikki
+ * laskut.
+ *
  * @author holmbrob
  */
 public class Operaatiokuuntelija implements ActionListener {
+
     private final JLabel naytto;
     private final JButton m;
     private final JButton mplus;
@@ -24,9 +27,10 @@ public class Operaatiokuuntelija implements ActionListener {
     private final JButton jako;
     private final JButton yhtakuin;
     private final Laskin laskin;
-    
+
     /**
      * Konstruktori alustaa laskimen, näytön ja kaikki napit.
+     *
      * @param laskin Laskin-rajapintaa toteuttava olio
      * @param naytto JLabel näyttö johon kirjoitetaan vastaukset
      * @param napit lista JButton-napeista
@@ -44,45 +48,46 @@ public class Operaatiokuuntelija implements ActionListener {
         this.jako = napit.get(7);
         this.yhtakuin = napit.get(8);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "M" :
+            case "M":
                 memory();
                 break;
-            case "M+" :
+            case "M+":
                 mplus();
                 break;
-            case "M-" :
+            case "M-":
                 mmiinus();
                 break;
-            case "C" :
+            case "C":
                 nollaa();
                 break;
-            case "+" :
+            case "+":
                 operaatio("plus");
                 break;
-            case "-" : 
+            case "-":
                 operaatio("miinus");
                 break;
-            case "*" :
+            case "*":
                 operaatio("kertaus");
                 break;
-            case "/" :
+            case "/":
                 operaatio("jako");
                 break;
-            case "=" :
+            case "=":
                 yhtakuin();
                 break;
         }
     }
-    
+
     private void memory() {
         if (laskin.memory() != 0) {
             naytto.setText(Double.toString(laskin.memory()));
         }
     }
-    
+
     private void mplus() {
         if (!naytto.getText().isEmpty() && !naytto.getText().equals("ERROR")) {
             if (laskin.memory() == 0) {
@@ -91,35 +96,35 @@ public class Operaatiokuuntelija implements ActionListener {
             }
         }
     }
-    
+
     private void mmiinus() {
         laskin.mmiinus();
     }
-    
+
     private void nollaa() {
         laskin.nollaa();
         naytto.setText("");
     }
-    
+
     private void operaatio(String oper) {
         laskin.plus(Double.parseDouble(naytto.getText()));
         naytto.setText("");
         switch (oper) {
-            case "plus" :
+            case "plus":
                 laskin.setOperaatio(Operaatio.PLUS);
                 break;
-            case "miinus" :
+            case "miinus":
                 laskin.setOperaatio(Operaatio.MIINUS);
                 break;
-            case "kertaus" :
+            case "kertaus":
                 laskin.setOperaatio(Operaatio.KERTAUS);
                 break;
-            case "jako" :
+            case "jako":
                 laskin.setOperaatio(Operaatio.JAKO);
                 break;
         }
     }
-    
+
     private void yhtakuin() {
         if (!naytto.getText().isEmpty()) {
             double arvo = Double.parseDouble(naytto.getText());
@@ -143,15 +148,14 @@ public class Operaatiokuuntelija implements ActionListener {
             }
             if (totuus) {
                 String vastaus = Double.toString(laskin.getArvo());
+                if (vastaus.contains("E")) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(vastaus.substring(0, 8));
+                    sb.append(vastaus.substring(vastaus.length() - 3, vastaus.length()));
+                    vastaus = sb.toString();
+                }
                 if (vastaus.length() > 12) {
-                    if (vastaus.contains("E")) {
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(vastaus.substring(0, 8));
-                        sb.append(vastaus.substring(vastaus.length() - 3, vastaus.length()));
-                        vastaus = sb.toString();
-                    } else {
-                        vastaus = vastaus.substring(0, 11);
-                    }
+                    vastaus = vastaus.substring(0, 11);
                 }
                 naytto.setText(vastaus);
             } else {
@@ -160,5 +164,5 @@ public class Operaatiokuuntelija implements ActionListener {
             laskin.setOperaatio(null);
             laskin.nollaa();
         }
-    }    
+    }
 }

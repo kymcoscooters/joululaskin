@@ -36,7 +36,7 @@ public class Kayttoliittyma implements Runnable {
         frame = new JFrame("KYMCOLASKIN");
 //        frame.setPreferredSize(new Dimension(300, 600));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        frame.setResizable(false);
+        frame.setResizable(false);
         
         luoKomponentit(frame.getContentPane());
         
@@ -67,9 +67,11 @@ public class Kayttoliittyma implements Runnable {
         
         for (JButton jb : numer) {
             jb.addActionListener(nk);
+            jb.setFont(new Font("Arial", Font.PLAIN, 20));
         }
         for (JButton jb : oper) {
             jb.addActionListener(ok);
+            jb.setFont(new Font("Arial", Font.PLAIN, 20));
         }
         
     }
